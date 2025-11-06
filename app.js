@@ -1,109 +1,67 @@
-// ========== MOVIE APP - SESSION 2 ==========
-// Movie objects created from HTML data
+//=========MOVIE OBJECTS=========//
 
-// Movie 1: Barbie
+//Movie 1: Barbie//
 const barbieMovie = {
   id: 1,
-  title: "Barbie",
+  title: "barbie",
   year: 2023,
   genre: ["Adventure", "Comedy", "Fantasy"],
   rating: 7.0,
   director: "Greta Gerwig",
   image: "https://upload.wikimedia.org/wikipedia/en/0/0b/Barbie_2023_poster.jpg",
   actors: ["Margot Robbie", "Ryan Gosling", "America Ferrera"],
-  description:
-    "Barbie and Ken embark on a journey of self-discovery after leaving the utopian Barbie Land for the real world."
+  description: "Barbie and Ken are having the time of their lives in Barbie Land until they get a wake-up call that they might not be perfect."
+
 };
 
-// Movie 2: Dune
+
+//Movie 2: Dune
 const duneMovie = {
-  id: 4,
+  id: 2,
   title: "Dune",
   year: 2021,
   genre: ["Adventure", "Drama", "Sci-Fi"],
   rating: 8.0,
   director: "Denis Villeneuve",
   image: "https://upload.wikimedia.org/wikipedia/en/8/8e/Dune_%282021_film%29.jpg",
-  actors: ["Timothée Chalamet", "Rebecca Ferguson", "Oscar Isaac"],
-  description:
-    "Paul Atreides leads nomadic tribes in a battle to control the desert planet Arrakis and its valuable spice."
+  actors: ["Timothée Chalamet", "Rebecca Ferguson", "Zendaya", "Oscar Isaac"],
+  description: "Feature adaptation of Frank Herbert's science fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy."
+
 };
 
-// Movie 3: Dune: Part Two
-const duneTwoMovie = {
-  id: 16,
+
+//Movie 3: Dune Part Two
+const dunePartTwoMovie = {
+  id: 3,
   title: "Dune: Part Two",
   year: 2024,
-  genre: ["Action", "Adventure", "Drama"],
+  genre: ["Adventure", "Drama", "Sci-Fi"],
   rating: 8.7,
   director: "Denis Villeneuve",
-  image:
-    "https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc@._V1_.jpg",
-  actors: ["Timothée Chalamet", "Zendaya", "Rebecca Ferguson"],
-  description:
-    "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family."
+  image: "https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc@._V1_.jpg",
+  actors: ["Timothée Chalamet", "Rebecca Ferguson", "Zendaya", "Oscar Isaac"],
+  description: "Feature adaptation of Frank Herbert's science fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy."
+}
+
+//Movie 4: Spider-Man: Across the Spider-Verse
+const spider = {
+  id: 4,
+  title: "Spider-Man: Across the Spider-Verse",
+  year: 2023,
+  genre: ["Animation", "Action", "Adventure"],
+  rating: 8.7,
+  director: "Joaquim Dos Santos",
+  image: "https://m.media-amazon.com/images/M/MV5BZjE1ODk2NDgtNTMxZC00ZWQ1LWFlZmItNjQ1ZWRhZTQ5NTliXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  actors: ["Shameik Moore", "Hailee Steinfeld", "Jake Johnson"],
+  description: "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence."
 };
 
-// Tilføj resten af dine movie objekter her...
-// (De objekter du oprettede i Trin 13)
-
-console.log("✅ Movie objects loaded and ready for DOM manipulation!");
-
-
-// Find movie list container (den er nu tom efter Trin 15B!)
-const movieListContainer = document.querySelector("#movie-list");
-
-// Tilføj Barbie movie DIREKTE med template string
-const barbieHTML = `
-  <article class="movie-card">
-    <img src="${barbieMovie.image}" 
-         alt="Poster of ${barbieMovie.title}" 
-         class="movie-poster" />
-    <div class="movie-info">
-      <h3>${barbieMovie.title} <span class="movie-year">(${barbieMovie.year})</span></h3>
-      <p class="movie-genre">${barbieMovie.genre}</p>
-      <p class="movie-rating">⭐ ${barbieMovie.rating}</p>
-      <p class="movie-director"><strong>Director:</strong> ${barbieMovie.director}</p>
-    </div>
-  </article>
-`;
-
-movieListContainer.insertAdjacentHTML("beforeend", barbieHTML);
-console.log("Barbie added!");
-
-// Tilføj Dune movie DIREKTE (bemærk hvor meget du skriver igen!)
-const duneHTML = `
-  <article class="movie-card">
-    <img src="${duneMovie.poster}" 
-         alt="Poster of ${duneMovie.title}" 
-         class="movie-poster" />
-    <div class="movie-info">
-      <h3>${duneMovie.title} <span class="movie-year">(${duneMovie.year})</span></h3>
-      <p class="movie-genre">${duneMovie.genre}</p>
-      <p class="movie-rating">⭐ ${duneMovie.rating}</p>
-      <p class="movie-director"><strong>Director:</strong> ${duneMovie.director}</p>
-    </div>
-  </article>
-`;
-
-movieListContainer.insertAdjacentHTML("beforeend", duneHTML);
-console.log("Dune added!");
-
-// Tilføj Dune: Part Two (SAMME kode igen og igen!)
-const duneTwoHTML = `
-  <article class="movie-card">
-    <img src="${duneTwoMovie.poster}" 
-         alt="Poster of ${duneTwoMovie.title}" 
-         class="movie-poster" />
-    <div class="movie-info">
-      <h3>${duneTwoMovie.title} <span class="movie-year">(${duneTwoMovie.year})</span></h3>
-      <p class="movie-genre">${duneTwoMovie.genre}</p>
-      <p class="movie-rating">⭐ ${duneTwoMovie.rating}</p>
-      <p class="movie-director"><strong>Director:</strong> ${duneTwoMovie.director}</p>
-    </div>
-  </article>
-`;
-
-movieListContainer.insertAdjacentHTML("beforeend", duneTwoHTML);
-console.log("Dune: Part Two added!");
-
+//Movie 5: Avatar: The Way of Water
+const Avatar = {
+  id: 5,
+  title: "Avatar: The Way of Water",
+  year: 2022,
+  genre: ["Action", "Adventure", "Fantasy"],
+  rating: 7.7,
+  director
+}
